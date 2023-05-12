@@ -27,8 +27,8 @@ type Course struct {
 func main() {
     // Capture connection properties.
     cfg := mysql.Config{
-        User:  "root",
-        Passwd: "engmso14789",
+        User:  "mysql username here ",
+        Passwd: "mysql password",
         Net:    "tcp",
         Addr:   "127.0.0.1:3306",
         DBName: "GoSchool",
@@ -63,7 +63,7 @@ func main() {
 	fmt.Scanln(&choice)
 
 	switch choice {
-	case "1" :
+	case "1" : // show all students
 		s,err := allStudents()
 		if err != nil {
 			println("Something went wrong, try again")
@@ -71,7 +71,7 @@ func main() {
 		fmt.Println(s)
 		fmt.Println("------------")
 		break
-	case "2" :
+	case "2" : // display all courses
 		c,err := allCourses()
 		if err != nil {
 			println("Something went wrong, try again")
@@ -80,7 +80,7 @@ func main() {
 		fmt.Println("------------")
 		break
 
-	case "3" : 
+	case "3" :  // add students
 		var name string 
 		var level int
 
@@ -91,7 +91,7 @@ func main() {
 
 		addStudent(name,level)
 		break
-	case "4" : 
+	case "4" :  // add course
 		var code string 
 		var title string
 
